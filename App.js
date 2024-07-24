@@ -8,7 +8,6 @@ export default function App() {
 		<SafeAreaProvider>
 			<View style={styles.container}>
 				<StatusBar style='auto' />
-
 				<Main />
 			</View>
 		</SafeAreaProvider>
@@ -22,32 +21,5 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		paddingHorizontal: 12,
-	},
-	card: {
-		marginBottom: 42,
-	},
-	image: {
-		width: 107,
-		height: 147,
-		borderRadius: 10,
-	},
-
-	title: {
-		color: '#fff',
-		fontSize: 20,
-		fontWeight: 'bold',
-		marginTop: 10,
-	},
-
-	description: {
-		color: '#eee',
-		fontSize: 16,
-	},
-
-	score: {
-		color: 'green',
-		fontSize: 22,
-		marginBottom: 10,
-		fontWeight: 'bold',
 	},
 });

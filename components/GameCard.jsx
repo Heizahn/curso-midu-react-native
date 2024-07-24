@@ -1,6 +1,21 @@
 import { StyleSheet, View, Image, Text, Animated } from 'react-native';
-import gameDescription from '../lib/gameDescription';
 import { useEffect, useRef } from 'react';
+import Score from './Score';
+
+export function GameCard({ item }) {
+	return (
+		<View className='flex-row bg-slate-400/10 rounded-xl p-4 mb-10' key={item.slug}>
+			<Image source={{ uri: item.image }} style={styles.image} />
+			<View className='px-2'>
+				<Text className='text-white font-bold p-2 text-lg'>{item.title}</Text>
+				<Score score={item.score} maxScore={100} />
+				<Text className='mt-2 flex-shrink-0' style={styles.description}>
+					{item.description.slice(0, 100)} ...
+				</Text>
+			</View>
+		</View>
+	);
+}
 
 export function AnimatedGameCard({ item, index }) {
 	const opacity = useRef(new Animated.Value(0)).current;
@@ -20,16 +35,6 @@ export function AnimatedGameCard({ item, index }) {
 		</Animated.View>
 	);
 }
-export default function GameCard({ item }) {
-	return (
-		<View style={styles.card}>
-			<Image source={{ uri: item.image }} style={styles.image} />
-			<Text style={styles.title}>{item.title}</Text>
-			<Text style={styles.score}>{item.score}</Text>
-			<Text style={styles.description}>{gameDescription(item.description)}</Text>
-		</View>
-	);
-}
 
 const styles = StyleSheet.create({
 	card: {
@@ -42,22 +47,8 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 	},
 
-	title: {
-		color: '#fff',
-		fontSize: 20,
-		fontWeight: 'bold',
-		marginTop: 10,
-	},
-
 	description: {
 		color: '#eee',
 		fontSize: 16,
-	},
-
-	score: {
-		color: 'green',
-		fontSize: 22,
-		marginBottom: 10,
-		fontWeight: 'bold',
 	},
 });

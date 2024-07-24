@@ -3,6 +3,7 @@
     "name": "curso-react-native-midu-desde-cero",
     "slug": "curso-react-native-midu-desde-cero",
     "version": "1.0.0",
+    "scheme": "metacritic",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,6 +23,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

@@ -20,7 +20,7 @@ export default function Main() {
 				paddingBottom: insets.bottom,
 			}}
 		>
-			<View style={{ paddingVertical: 20 }}>
+			<View style={{ paddingVertical: 12 }}>
 				<Logo />
 			</View>
 			{games.length === 0 ? (

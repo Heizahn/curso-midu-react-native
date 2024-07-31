@@ -1,6 +1,7 @@
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { Stack } from 'expo-router';
 import Screen from '../components/Screen';
+
 export default function About() {
 	return (
 		<ScrollView className='bg-black'>
@@ -9,6 +10,10 @@ export default function About() {
 					headerLeft: () => {},
 					headerTitle: () => <Text className='text-white font-bold text-2xl'>About</Text>,
 					headerRight: () => {},
+
+					statusBarStyle: 'light',
+					statusBarColor: '#000',
+					statusBarTranslucent: true,
 				}}
 			/>
 

@@ -5,6 +5,7 @@ import { Stack } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { getGameDetail } from '../lib/metacritic';
 import Score from '../components/Score';
+import { StatusBar } from 'expo-status-bar';
 
 export default function Detail() {
 	const { gameslug } = useLocalSearchParams();
@@ -18,6 +19,7 @@ export default function Detail() {
 
 	return (
 		<Screen>
+			<StatusBar style='dark' />
 			<Stack.Screen
 				options={{
 					headerStyle: {
@@ -27,6 +29,8 @@ export default function Detail() {
 					headerLeft: () => {},
 					headerRight: () => {},
 					headerTitle: gameInfo !== null ? gameInfo.title : '',
+					statusBarStyle: 'dark',
+					statusBarTranslucent: true,
 				}}
 			/>
 			<View>

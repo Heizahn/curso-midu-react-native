@@ -3,6 +3,7 @@ import { View, FlatList, ActivityIndicator } from 'react-native';
 import { getLatestGame } from '../lib/metacritic';
 import { AnimatedGameCard } from './GameCard';
 import Screen from './Screen';
+import { Stack } from 'expo-router';
 
 export default function Main() {
 	const [games, setGames] = useState([]);
@@ -13,6 +14,13 @@ export default function Main() {
 
 	return (
 		<Screen>
+			<Stack.Screen
+				options={{
+					statusBarStyle: 'light',
+					statusBarColor: '#000',
+					statusBarTranslucent: true,
+				}}
+			/>
 			<View className='mt-2'>
 				{games.length === 0 ? (
 					<View className='flex-1 justify-center'>

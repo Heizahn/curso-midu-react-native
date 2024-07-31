@@ -1,22 +1,9 @@
 import { ScrollView, Text } from 'react-native';
-import { Stack } from 'expo-router';
-import Screen from '../components/Screen';
+import Screen from '../../components/Screen';
 
 export default function About() {
 	return (
 		<ScrollView className='bg-black'>
-			<Stack.Screen
-				options={{
-					headerLeft: () => {},
-					headerTitle: () => <Text className='text-white font-bold text-2xl'>About</Text>,
-					headerRight: () => {},
-
-					statusBarStyle: 'light',
-					statusBarColor: '#000',
-					statusBarTranslucent: true,
-				}}
-			/>
-
 			<Screen>
 				<Text className='text-white'>
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque id optio alias

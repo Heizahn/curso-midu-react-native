@@ -1,26 +1,17 @@
-import { View } from 'react-native';
-import { Link, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { Logo } from '../components/Logo';
 
 export default function Layout() {
 	return (
-		<View className='flex-1'>
-			<Stack
-				screenOptions={{
-					headerStyle: {
-						backgroundColor: '#000',
-					},
-
-					headerTintColor: '#fff',
-					headerTitle: '',
-					headerLeft: () => <Logo />,
-					headerRight: () => (
-						<Link href={'/about'} className='text-blue-600 font-bold text-xl'>
-							Ir a about
-						</Link>
-					),
-				}}
-			/>
-		</View>
+		<Stack
+			screenOptions={{
+				headerLeft: () => <Logo />,
+				headerStyle: { backgroundColor: '#000' },
+				title: '',
+				statusBarColor: '#000',
+			}}
+		>
+			<Stack.Screen name='(tabs)' />
+		</Stack>
 	);
 }
